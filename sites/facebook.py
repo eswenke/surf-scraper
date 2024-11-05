@@ -84,7 +84,7 @@ class Facebook(Site):
             listings = []
             for i, item in enumerate(titles_list):
                 surf_dict = {}
-                surf_dict["Title"] = item # can change this to just 'item' ?
+                surf_dict["Title"] = item 
                 surf_dict["Price"] = int(re.sub(pattern, '', prices_list[i]))
                 surf_dict["Location"] = loc_list[i]
                 surf_dict["URL"] = url_list[i]

@@ -1,6 +1,9 @@
 from .site import Site
-from splinter import Browser
 from typing import Optional
+from bs4 import BeautifulSoup as soup
+import re
+import pandas as pd
+import time
 
 
 class CraigsList(Site):
@@ -11,7 +14,8 @@ class CraigsList(Site):
         pass
     
     def scrape(self) -> None:
-        pass
+        b = self.get_browser()
+        b.visit(self.buildURL())
         
 # https://slo.craigslist.org
 # /search/sss?max_price=200&min_price=0&postal=93405&query=surfboards&search_distance=30#search=1~gallery~0~0
